@@ -2,11 +2,11 @@
 
   
 
-# Vet Clinic Database
+# School library
 
   
 
-> School library is a fully OOP library managment system built using ruby .
+> School library is a fully OOP library managment system built using ruby the user has the ability to add books, persons and create rentals for specific books.
   
 
 ## Live Demo
@@ -47,7 +47,6 @@ To get a local copy up and running you'll need to have Ruby installed on your lo
 
 After installing Ruby please follow the next steps...
 
-  
 
 ### Usage
 
