@@ -1,5 +1,5 @@
 class Person
-  def initialize(age, name = 'unknown', parent_permmission = true)
+  def initialize(age, name = 'unknown', parent_permmission: true)
     @id = Random.rand(1..500)
     @name = name
     @age = age
@@ -15,7 +15,7 @@ class Person
 
   private
 
-  def is_of_age?
+  def of_age?
     return true if @age >= 18
 
     false
