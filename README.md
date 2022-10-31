@@ -18,14 +18,14 @@
 ## Built With
 
 
-- PostgreSQL
+- Ruby
 
   
 
 ### Technologies used
 
 - Git, Github.
-- pgAdmin 4
+- Linters
 
   
 ## Getting Started
@@ -35,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- use git clone in order to get the copy this repo. You need to have atleast basic understanding of JavaScript.
+- use git clone in order to get the copy this repo. You need to have atleast basic understanding of Ruby.
 
 
 ## Setup
@@ -45,7 +45,7 @@ To get a local copy up and running you'll need to have Ruby installed on your lo
 
 ### Install
 
-After installing PostgreSQL please follow the next steps...
+After installing Ruby please follow the next steps...
 
   
 
