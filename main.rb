@@ -1,11 +1,5 @@
 require_relative './app'
 
-def main
-  app = App.new
-  app.run
-  p app
-end
-
 def prompt
   loop do
     display_options
@@ -57,6 +51,11 @@ def option_methods(option)
     puts 'Thank you for using this app!'
     exit
   end
+end
+
+def main
+  app = App.new
+  app.run
 end
 
 main
