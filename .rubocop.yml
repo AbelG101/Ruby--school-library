@@ -16,7 +16,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods: ['describe']
   Max: 30
 
 
@@ -37,8 +37,6 @@ Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
   AllowForAlignment: false
-Layout/EndOfLine:
-   Enabled: False
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
@@ -52,7 +50,5 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-
-Naming/FileName:
-  ExpectMatchingDefinition: true
-  CheckDefinitionPathHierarchy: false
+Layout/EndOfLine:
+   Enabled: False

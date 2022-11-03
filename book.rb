@@ -3,7 +3,7 @@ class Book
   attr_reader :rentals
 
   def initialize(title, author)
-    @tittle = title
+    @title = title
     @author = author
     @rentals = []
   end
