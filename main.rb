@@ -2,15 +2,15 @@ require_relative './app'
 
 def main
   app = App.new
-  app.run()
+  app.run
   p app
 end
 
 def prompt
   loop do
-    display_options()
-    option = get_option()
-    some(option)
+    display_options
+    option = take_input
+    option_methods(option)
 
     break if option == 7
   end
@@ -27,7 +27,7 @@ def display_options
   puts '7. - Exit'
 end
 
-def get_option
+def take_input
   print 'Enter a number: '
   option = gets.chomp.to_i
   while option.nil? || option < 1 || option > 7
@@ -38,59 +38,25 @@ def get_option
   option
 end
 
-def some(option)
+def option_methods(option)
   # app = App.new
   case option
-    when 1
-      display_all_books()
-    when 2
-      display_all_people()
-
-    when 3
-      print 'Do you want to create a student(1) or a teacher(2)? [Input the number]: '
-      person_option = gets.chomp.to_i
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Name: '
-      name = gets.chomp
-      # create a student
-      if person_option == 1
-        print 'Classroom: '
-        classroom_ = gets.chomp
-        print 'Has parent permmission? [Y/N]: '
-        parent_permmission = gets.chomp.downcase == 'y' ? true : false
-        create_student(name, age, parent_permmission, classroom_)
-      # create a teacher
-      else
-        print 'Specialization: '
-        specialization = gets.chomp
-        create_teacher(name, age, specialization)
-      end
-      puts 'Person created successfully'
-    when 4
-      print 'Title: '
-      title = gets.chomp
-      print 'Author: '
-      author = gets.chomp
-      create_book(title, author)
-      puts 'Book created successfully'
-    when 5
-      puts "Select a book from the following list by number"
-      display_all_books()
-      selected_book_option = gets.chomp.to_i
-      display_all_people()
-      selected_person_option = gets.chomp.to_i
-      print "Date: "
-      date = gets.chomp
-      create_rental(selected_book_option, selected_person_option, date)
-      puts 'Rental created successfully'
-    when 6
-      print "Id of person: "
-      person_id = gets.chomp.to_i
-      get_rental_by_id(person_id)
-    else 
-      'exit'
+  when 1
+    display_all_books
+  when 2
+    display_all_people
+  when 3
+    create_person
+  when 4
+    create_book
+  when 5
+    create_rental
+  when 6
+    list_rental_by_id
+  else
+    puts 'Thank you for using this app!'
+    exit
   end
 end
 
-main()
+main

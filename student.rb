@@ -5,7 +5,7 @@ class Student < Person
 
   def initialize(classroom, age, name: 'unknown', parent_permmission: true, role: 'Student')
     puts "From student: #{classroom} #{age} #{name} #{parent_permmission}"
-    super(age, name = name, parent_permmission: parent_permmission)
+    super(age, name, parent_permmission: parent_permmission)
     @classroom = classroom
     @role = role
   end
@@ -16,6 +16,6 @@ class Student < Person
   end
 
   def play_hooky
-    '¯\\(ツ)/¯' 
+    '¯\\(ツ)/¯'
   end
 end
