@@ -9,6 +9,6 @@ class Book
   end
 
   def add_rental(price)
-    @rentals << price
+    @rental << price
   end
 end
