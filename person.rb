@@ -21,7 +21,7 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(price)
+  def add_rental
     @rentals << price
   end
 
