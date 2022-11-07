@@ -3,6 +3,11 @@ require_relative './teacher'
 require_relative './book'
 require_relative './classroom'
 require_relative './rental'
+require_relative './display_books'
+require_relative './display_people'
+require_relative './display_rental'
+# require_relative './student'
+class App
 require_relative './create_book'
 require_relative './create_rental'
 require_relative './create_person'
@@ -13,6 +18,10 @@ class App
   include CreatePerson
 
   attr_accessor :books, :students, :teachers, :rentals
+
+  include DisplayBooks
+  include DisplayPeople
+  include DisplayRental
 
   def initialize
     @books = []
