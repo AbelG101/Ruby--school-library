@@ -1,5 +1,5 @@
 module DisplayRental
-  def display_rental_by_id
+  def list_rental_by_id
     print 'Id of person: '
     id = gets.chomp.to_i
     @rentals.each do |rental|
