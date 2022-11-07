@@ -94,6 +94,6 @@ class App
   end
 
   def run(option)
-    option_methods(option, self)
+    option_methods(option)
   end
 end
