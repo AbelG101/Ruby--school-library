@@ -3,29 +3,21 @@ require_relative './teacher'
 require_relative './book'
 require_relative './classroom'
 require_relative './rental'
+require_relative './display_books'
+require_relative './display_people'
+require_relative './display_rental'
 # require_relative './student'
-require_relative './option_methods'
 class App
   attr_accessor :books, :students, :teachers, :rentals
 
-  include OptionMethods
+  include DisplayBooks
+  include DisplayPeople
+  include DisplayRental
 
   def initialize
     @books = []
     @people = []
     @rentals = []
-  end
-
-  def display_all_books
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
-    end
-  end
-
-  def display_all_people
-    @people.each_with_index do |people, index|
-      puts "#{index}) [#{people.role}] Name: #{people.name}, ID: #{people.id}, Age: #{people.age}"
-    end
   end
 
   def create_person
@@ -85,15 +77,23 @@ class App
     puts 'Rental created successfully'
   end
 
-  def list_rental_by_id
-    print 'Id of person: '
-    id = gets.chomp.to_i
-    @rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}" if rental.person.id == id
-    end
-  end
-
   def run(option)
-    option_methods(option, self)
+    case option
+    when 1
+      display_all_books
+    when 2
+      display_all_people
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      display_rental_by_id
+    else
+      puts 'Thank you for using this app!'
+      exit
+    end
   end
 end
