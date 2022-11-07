@@ -6,8 +6,6 @@ require_relative './rental'
 require_relative './display_books'
 require_relative './display_people'
 require_relative './display_rental'
-# require_relative './student'
-class App
 require_relative './create_book'
 require_relative './create_rental'
 require_relative './create_person'
@@ -16,37 +14,16 @@ class App
   include CreateBook
   include CreateRental
   include CreatePerson
-
-  attr_accessor :books, :students, :teachers, :rentals
-
   include DisplayBooks
   include DisplayPeople
   include DisplayRental
+
+  attr_accessor :books, :students, :teachers, :rentals
 
   def initialize
     @books = []
     @people = []
     @rentals = []
-  end
-
-  def display_all_books
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
-    end
-  end
-
-  def display_all_people
-    @people.each_with_index do |people, index|
-      puts "#{index}) [#{people.role}] Name: #{people.name}, ID: #{people.id}, Age: #{people.age}"
-    end
-  end
-
-  def list_rental_by_id
-    print 'Id of person: '
-    id = gets.chomp.to_i
-    @rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}" if rental.person.id == id
-    end
   end
 
   def run(option)
