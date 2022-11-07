@@ -4,9 +4,11 @@ require_relative './book'
 require_relative './classroom'
 require_relative './rental'
 # require_relative './student'
-
+require_relative './option_methods'
 class App
   attr_accessor :books, :students, :teachers, :rentals
+
+  include OptionMethods
 
   def initialize
     @books = []
@@ -91,7 +93,7 @@ class App
     end
   end
 
-  def run
-    prompt
+  def run(option)
+    option_methods(option, self)
   end
 end
