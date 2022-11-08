@@ -26,6 +26,7 @@ class App
     @books = []
     @people = []
     @rentals = []
+    load_data
   end
 
   def run(option)
