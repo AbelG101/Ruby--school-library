@@ -14,6 +14,15 @@ module PreserveData
     load_rentals
   end
 
+  def load_books
+    books_hash = []
+    return books_hash unless File.exist?(BOOKS_FILE_NAME)
+    books_hash = load_data_from_file(BOOKS_FILE_NAME)
+    @books = books_hash.map do |book|
+      Book.new(book['title'], book['author'])
+    end
+  end
+
   def save_to_file(file_name, data)
     File.open(file_name, "w") do |f|
       f.write(JSON.pretty_generate(data))
