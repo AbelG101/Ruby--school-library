@@ -10,8 +10,8 @@ class Person < Nameable
     @rentals = []
   end
 
-  attr_accessor :name, :age
-  attr_reader :id, :rentals, :parent_permission
+  attr_accessor :id, :name, :age
+  attr_reader :rentals, :parent_permission
 
   def can_use_services?
     @parent_permission || of_age?
