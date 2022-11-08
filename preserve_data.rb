@@ -99,8 +99,9 @@ module PreserveData
   end
 
   def save_rentals
-    rentals_hash = @rentals.map do |rental|
-      {
+    rentals_hash = []
+    @rentals.each do |rental|
+      rental_hash = {
         date: rental.date,
         book: {
           title: rental.book.title,
@@ -109,9 +110,17 @@ module PreserveData
         person: {
           id: rental.person.id,
           name: rental.person.name,
-          age: rental.person.age
+          age: rental.person.age,
+          parent_permission: rental.person.parent_permission,
+          role: rental.person.role,
         }
       }
+      if rental.person.role == 'Student'
+        rental_hash[:person][:classroom] = rental.person.classroom.label
+      else
+        rental_hash[:person][:specialization] = rental.person.specialization
+      end
+      rentals_hash << rental_hash
     end
     save_to_file(RENTALS_FILE_NAME, rentals_hash)
   end
