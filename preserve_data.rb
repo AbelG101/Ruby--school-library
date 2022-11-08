@@ -54,6 +54,18 @@ module PreserveData
     end
   end
 
+  def make_rental(person)
+    if person['role'] == 'Student'
+      student = Student.new(Classroom.new(person['classroom']), person['age'], name: person['name'], parent_permission: person['parent_permission'])
+      student.id = person['id'].to_i
+      return student
+    else
+      teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+      teacher.id = person['id'].to_i
+      return teacher
+    end
+  end
+
   def save_to_file(file_name, data)
     File.open(file_name, "w") do |f|
       f.write(JSON.pretty_generate(data))
