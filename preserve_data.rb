@@ -8,6 +8,12 @@ module PreserveData
   RENTALS_FILE_NAME = './rentals.json'
   BOOKS_FILE_NAME = './books.json'
 
+  def load_data
+    load_people
+    load_books
+    load_rentals
+  end
+
   def save_to_file(file_name, data)
     File.open(file_name, "w") do |f|
       f.write(JSON.pretty_generate(data))
