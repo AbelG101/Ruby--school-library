@@ -9,6 +9,7 @@ require_relative './display_rental'
 require_relative './create_book'
 require_relative './create_rental'
 require_relative './create_person'
+require_relative './preserve_data'
 
 class App
   include CreateBook
@@ -17,6 +18,7 @@ class App
   include DisplayBooks
   include DisplayPeople
   include DisplayRental
+  include PreserveData
 
   attr_accessor :books, :students, :teachers, :rentals
 
@@ -44,5 +46,11 @@ class App
       puts 'Thank you for using this app!'
       exit
     end
+  end
+
+  def exit
+    save_books
+    save_people
+    save_rentals
   end
 end
