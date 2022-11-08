@@ -40,6 +40,20 @@ module PreserveData
     end
   end
 
+  def load_rentals
+    rentals_hash = []
+    return rentals_hash unless File.exist?(RENTALS_FILE_NAME)
+    rentals_hash = load_data_from_file(RENTALS_FILE_NAME)
+    rentals_hash.each do |rental| 
+      book = Book.new(rental['book']['title'], rental['book']['author'])
+      person = make_rental(rental['person'])
+      @rentals << Rental.new(rental['date'], book, person)
+    end
+    @rentals.each do |rental|
+      puts rental.person.id
+    end
+  end
+
   def save_to_file(file_name, data)
     File.open(file_name, "w") do |f|
       f.write(JSON.pretty_generate(data))
