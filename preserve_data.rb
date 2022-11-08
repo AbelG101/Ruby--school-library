@@ -72,6 +72,11 @@ module PreserveData
     end
   end
 
+  def load_data_from_file(file_name)
+    file = File.read(file_name)
+    data_hash = JSON.parse(file)
+ end
+
   def save_people
     people_hash = @people.map do |person|
       if person.role == 'Student'
