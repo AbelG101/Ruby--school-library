@@ -10,6 +10,7 @@ require_relative './create_book'
 require_relative './create_rental'
 require_relative './create_person'
 require_relative './preserve_data'
+require_relative './load_data'
 
 class App
   include CreateBook
@@ -19,6 +20,7 @@ class App
   include DisplayPeople
   include DisplayRental
   include PreserveData
+  include LoadData
 
   attr_accessor :books, :students, :teachers, :rentals
 
