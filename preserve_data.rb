@@ -23,6 +23,23 @@ module PreserveData
     end
   end
 
+  def load_people
+    people_hash = []
+    return people_hash unless File.exist?(PERSON_FILE_NAME)
+    people_hash = load_data_from_file(PERSON_FILE_NAME)
+    people_hash.each do |people|
+      if people['role'] == 'Student'
+        student = Student.new(Classroom.new(people['classroom']), people['age'], name: people['name'], parent_permission: people['parent_permission'])
+        student.id = people['id']
+        @people << student
+      else
+        teacher = Teacher.new(people['specialization'], people['age'], people['name'])
+        teacher.id = people['id']
+        @people << teacher
+      end
+    end
+  end
+
   def save_to_file(file_name, data)
     File.open(file_name, "w") do |f|
       f.write(JSON.pretty_generate(data))
