@@ -16,8 +16,8 @@ module CreatePerson
       print 'Classroom: '
       classroom_ = gets.chomp
       print 'Has parent permmission? [Y/N]: '
-      parent_permmission = gets.chomp.downcase == 'y'
-      create_student(name, age, parent_permmission, classroom_)
+      parent_permission = gets.chomp.downcase == 'y'
+      create_student(name, age, parent_permission, classroom_)
     else
       print 'Specialization: '
       specialization = gets.chomp

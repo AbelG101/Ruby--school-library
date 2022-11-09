@@ -1,0 +1,25 @@
+[
+  {
+    "id": "335",
+    "name": "Lukas",
+    "age": 22,
+    "parent_permission": false,
+    "classroom": "901B",
+    "role": "Student"
+  },
+  {
+    "id": "410",
+    "name": "Plato",
+    "age": 49,
+    "specialization": "Philosophy",
+    "role": "Teacher"
+  },
+  {
+    "id": "198",
+    "name": "Kenny",
+    "age": 18,
+    "parent_permission": true,
+    "classroom": "101A",
+    "role": "Student"
+  }
+]

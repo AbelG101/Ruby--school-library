@@ -1,0 +1,32 @@
+[
+  {
+    "date": "07/07/2020",
+    "book": {
+      "title": "ABCD",
+      "author": "ab"
+    },
+    "person": {
+      "id": 335,
+      "name": "Lukas",
+      "age": 22,
+      "parent_permission": false,
+      "role": "Student",
+      "classroom": "901B"
+    }
+  },
+  {
+    "date": "09/09/2000",
+    "book": {
+      "title": "ABCD",
+      "author": "ab"
+    },
+    "person": {
+      "id": "198",
+      "name": "Kenny",
+      "age": 18,
+      "parent_permission": true,
+      "role": "Student",
+      "classroom": "101A"
+    }
+  }
+]
