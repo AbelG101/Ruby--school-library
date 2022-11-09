@@ -57,7 +57,7 @@ git clone https://github.com/AbelG101/Ruby--school-library.git
 
 ```
 
-## Author
+## Author 1
 
   
 
@@ -69,6 +69,12 @@ git clone https://github.com/AbelG101/Ruby--school-library.git
 
 - LinkedIn: [Abel Gebeyehu](https://www.linkedin.com/in/abel-gebeyehu-779743183/)
 
+## Author 2
+
+👤 **Bartosz K.**
+
+- GitHub: [@whid-bb](https://github.com/whid-bb)
+- LinkedIn: [Bartosz Kaźmierczak](https://www.linkedin.com/in/kazmierczakbartosz/)
   
   
 
